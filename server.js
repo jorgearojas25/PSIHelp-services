@@ -18,7 +18,7 @@ db(
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
-
+// prueba jajaja
 router(app);
 
 //route fot static elements like OpenAPI documentation for the BE
