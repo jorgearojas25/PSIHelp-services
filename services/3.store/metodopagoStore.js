@@ -1,8 +1,7 @@
-const Model = require("../Models/metodopagoModel");
+const Model = require("../Models/metodoPagoModel");
 const mongoose = require("mongoose");
 
 const AddMetodoPago = async (metodo_pago) => {
-    metodo_pago._SomeId = new mongoose.Types.ObjectId();
   const myMetodoPago = new Model(metodo_pago);
   return await myMetodoPago.save();
 };

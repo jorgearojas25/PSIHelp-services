@@ -1,10 +1,10 @@
-const thingStore = require("../3.store/usuarioStore");
+const usuarioStore = require("../3.store/usuarioStore");
 const config = require("../../config");
-const objThing = require("../BOs/usuarioBarrio");
+const objUsuario = require("../BOs/usuarioBarrio");
 
 const AddUsuraio = (body) => {
   return new Promise((resolve, reject) => {
-    let respuesta = new objDoctor(body);
+    let respuesta = new objUsuario(body);
     resolve(usuarioStore.add(respuesta));
   });
 };
@@ -17,7 +17,7 @@ const AddListUsuraio = async (body) => {
   for (const usuario in body) {
     if (body.hasOwnProperty(thing)) {
       const element = body[thing];
-      let savedElement = await thingStore.add(element);
+      let savedElement = await usuarioStore.add(element);
       arraySaved.push(savedElement);
     }
   }

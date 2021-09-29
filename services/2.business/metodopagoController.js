@@ -1,6 +1,6 @@
-const thingStore = require("../3.store/metodopagoStore");
+const metodopagoStore = require("../3.store/metodopagoStore");
 const config = require("../../config");
-const objThing = require("../BOs/metodopagoBarrio");
+const objMetodoPago = require("../BOs/metodopagoBarrio");
 
 const AddMetodoPago = (body) => {
   return new Promise((resolve, reject) => {

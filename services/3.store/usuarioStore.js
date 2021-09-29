@@ -2,18 +2,27 @@ const Model = require("../Models/usuarioModel");
 const mongoose = require("mongoose");
 
 const AddUsuario = async (usuario) => {
-    usuario._SomeId = new mongoose.Types.ObjectId();
   const myUsuario = new Model(usuario);
   return await myUsuario.save();
 };
 
 const GetUsuario = async (myFilter) => {
-  let filter = {};
-  if (myFilter !== null) {
-    filter = myFilter;
-  }
-  const usuario = await Model.find(filter);
-  return usuario;
+  return new Promise((resolve, reject) => {
+    let filter = {};
+    if (myFilter !== null) {
+      filter = myFilter;
+    }
+    const usuario = Model.find(filter)
+      .populate("Metodo_pago")
+      .exec((error, populated) => {
+        if (error) {
+          reject(error);
+          return false;
+        }
+        resolve(populated);
+      });
+    return usuario;
+  });
 };
 
 const UpdateUsuario = async (body) => {

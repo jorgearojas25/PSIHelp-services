@@ -2,18 +2,27 @@ const Model = require("../Models/doctorModel");
 const mongoose = require("mongoose");
 
 const AddDoctor = async (doctor) => {
-    doctor._SomeId = new mongoose.Types.ObjectId();
   const myDoctor = new Model(doctor);
   return await myDoctor.save();
 };
 
 const GetDoctor = async (myFilter) => {
-  let filter = {};
-  if (myFilter !== null) {
-    filter = myFilter;
-  }
-  const doctor = await Model.find(filter);
-  return doctor;
+  return new Promise((resolve, reject) => {
+    let filter = {};
+    if (myFilter !== null) {
+      filter = myFilter;
+    }
+    const doctor = Model.find(filter)
+      .populate("Especialidades")
+      .exec((error, populated) => {
+        if (error) {
+          reject(error);
+          return false;
+        }
+        resolve(populated);
+      });
+    return doctor;
+  });
 };
 
 const UpdateDoctor = async (body) => {

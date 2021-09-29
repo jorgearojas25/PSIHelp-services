@@ -2,23 +2,33 @@ const Model = require("../Models/agendaModel");
 const mongoose = require("mongoose");
 
 const AddAgenda = async (agenda) => {
-    agenda._SomeId = new mongoose.Types.ObjectId();
   const myAgenda = new Model(agenda);
   return await myAgenda.save();
 };
 
 const GetAgenda = async (myFilter) => {
-  let filter = {};
-  if (myFilter !== null) {
-    filter = myFilter;
-  }
-  const agenda = await Model.find(filter);
-  return agenda;
+  return new Promise((resolve, reject) => {
+    let filter = {};
+    if (myFilter !== null) {
+      filter = myFilter;
+    }
+    const agenda = Model.find(filter)
+      .populate("Id_usuario")
+      .populate("Id_doctor")
+      .exec((error, populated) => {
+        if (error) {
+          reject(error);
+          return false;
+        }
+        resolve(populated);
+      });
+    return agenda;
+  });
 };
 
 const UpdateAgenda = async (body) => {
   const foundAgenda = await Model.findByIdAndUpdate(body._id, body);
-  const updatedDAgenda = await Model.findById(body._id);
+  const updatedAgenda = await Model.findById(body._id);
   return updatedAgenda;
 };
 

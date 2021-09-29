@@ -1,6 +1,6 @@
-const thingStore = require("../3.store/especialidadStore");
+const especialidadStore = require("../3.store/especialidadStore");
 const config = require("../../config");
-const objThing = require("../BOs/especialidadBarrio");
+const objEspecialidad = require("../BOs/especialidadBarrio");
 
 const AddEspecialidad = (body) => {
   return new Promise((resolve, reject) => {

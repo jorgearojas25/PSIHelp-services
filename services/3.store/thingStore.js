@@ -2,7 +2,6 @@ const Model = require("../Models/thingModel");
 const mongoose = require("mongoose");
 
 const AddThing = async (thing) => {
-  thing._SomeId = new mongoose.Types.ObjectId();
   const myThing = new Model(thing);
   return await myThing.save();
 };

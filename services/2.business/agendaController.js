@@ -1,6 +1,6 @@
-const thingStore = require("../3.store/agendaStore");
+const agendaStore = require("../3.store/agendaStore");
 const config = require("../../config");
-const objThing = require("../BOs/agendaBarrio");
+const objAgenda = require("../BOs/agendaBarrio");
 
 const AddAgenda = (body) => {
   return new Promise((resolve, reject) => {

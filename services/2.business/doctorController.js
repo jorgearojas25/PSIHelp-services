@@ -1,6 +1,6 @@
-const thingStore = require("../3.store/doctorStore");
+const doctorStore = require("../3.store/doctorStore");
 const config = require("../../config");
-const objThing = require("../BOs/doctorBarrio");
+const objDoctor = require("../BOs/doctorBarrio");
 
 const AddDoctor = (body) => {
   return new Promise((resolve, reject) => {

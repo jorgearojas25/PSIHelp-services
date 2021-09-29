@@ -2,7 +2,6 @@ const Model = require("../Models/especialidadModel");
 const mongoose = require("mongoose");
 
 const AddEspecialidad = async (especialidad) => {
-    especialidad._SomeId = new mongoose.Types.ObjectId();
   const myEspecialidad = new Model(especialidad);
   return await myEspecialidad.save();
 };
