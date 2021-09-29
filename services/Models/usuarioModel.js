@@ -7,7 +7,7 @@ const mySchema = new Schema({
   Identificacion: { type: String, require: true },
   Correo: { type: String, require: true },
   Telefono: { type: String, require: true },
-  Foto: { type: String, require: true },
+  Foto: { type: String },
   Metodo_pago: { type: Schema.Types.ObjectId, ref: "MetodoPago" },
   Ordenes: { type: String, require: true },
   Fecha_creacion: { type: Date, default: Date.now },
