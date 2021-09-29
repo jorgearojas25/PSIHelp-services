@@ -15,8 +15,8 @@ const AddListUsuraio = async (body) => {
   }
   let arraySaved = [];
   for (const usuario in body) {
-    if (body.hasOwnProperty(thing)) {
-      const element = body[thing];
+    if (body.hasOwnProperty(usuario)) {
+      const element = body[usuario];
       let savedElement = await usuarioStore.add(element);
       arraySaved.push(savedElement);
     }
