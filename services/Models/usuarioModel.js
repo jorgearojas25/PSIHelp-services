@@ -5,6 +5,7 @@ const mySchema = new Schema({
   Nombre: { type: String, required: true },
   Password: { type: String, require: false },
   IsDoctor: { type: Boolean, require: true },
+  IsAdmin: { type: Boolean, require: true, default: false },
   Correo: { type: String, require: true },
   Telefono: { type: String, require: true },
   Foto: { type: String },
