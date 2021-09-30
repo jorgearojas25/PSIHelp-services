@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const mySchema = new Schema({
   Id_usuario: { type: Schema.ObjectId, ref: "Usuario" },
-  Id_doctor: { type: Schema.ObjectId, ref: "Doctor" },
-  Fecha_hora: { type: Date, required: true },
+  Id_doctor: { type: Schema.ObjectId, ref: "Usuario" },
+  Fecha: { type: String, required: true },
+  Hora: { type: String, required: true },
   Bloqueado: { type: Boolean, require: true, default: false },
   Llamada: { type: String, require: true, default: "" },
   Fecha_creacion: { type: Date, default: Date.now },

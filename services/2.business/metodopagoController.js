@@ -5,7 +5,7 @@ const objMetodoPago = require("../BOs/metodopagoBarrio");
 const AddMetodoPago = (body) => {
   return new Promise((resolve, reject) => {
     let respuesta = new objMetodoPago(body);
-    resolve(metodopagoSmetodopagotore.add(respuesta));
+    resolve(metodopagoStore.add(respuesta));
   });
 };
 

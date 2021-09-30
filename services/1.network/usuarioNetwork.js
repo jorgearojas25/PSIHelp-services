@@ -15,6 +15,17 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/filter", (req, res) => {
+  controller
+    .GetUsuario(req.body)
+    .then((data) => {
+      response.success(req, res, data, 200);
+    })
+    .catch((e) => {
+      response.error(req, res, `Internal Error`, 500, `${e}`);
+    });
+});
+
 router.post("/", (req, res) => {
   controller
     .AddUsuario(req.body)

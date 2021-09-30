@@ -1,7 +1,7 @@
 class Doctor {
   constructor(data) {
     this.Nombre = data.Nombre;
-    this.Apellido = data.Apellido;
+    this.Password = data.Password;
     this.Identificacion = data.Identificacion;
     this.Correo = data.Correo;
     this.Telefono = data.Telefono;

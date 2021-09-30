@@ -27,7 +27,7 @@ const GetDoctor = async (myFilter) => {
 
 const UpdateDoctor = async (body) => {
   const foundDoctor = await Model.findByIdAndUpdate(body._id, body);
-  const updatedDoctoro = await Model.findById(body._id);
+  const updatedDoctor = await Model.findById(body._id);
   return updatedDoctor;
 };
 

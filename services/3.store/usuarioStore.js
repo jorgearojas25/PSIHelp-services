@@ -14,6 +14,7 @@ const GetUsuario = async (myFilter) => {
     }
     const usuario = Model.find(filter)
       .populate("Metodo_pago")
+      .populate("Especialidades")
       .exec((error, populated) => {
         if (error) {
           reject(error);

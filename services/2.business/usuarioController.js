@@ -2,14 +2,14 @@ const usuarioStore = require("../3.store/usuarioStore");
 const config = require("../../config");
 const objUsuario = require("../BOs/usuarioBarrio");
 
-const AddUsuraio = (body) => {
+const AddUsuario = (body) => {
   return new Promise((resolve, reject) => {
     let respuesta = new objUsuario(body);
     resolve(usuarioStore.add(respuesta));
   });
 };
 
-const AddListUsuraio = async (body) => {
+const AddListUsuario = async (body) => {
   if (Array.isArray(body)) {
     Promise.reject("Invalid array data");
   }
@@ -24,13 +24,13 @@ const AddListUsuraio = async (body) => {
   return arraySaved;
 };
 
-const GetUsuraio = (body) => {
+const GetUsuario = (body) => {
   return new Promise((resolve, reject) => {
     resolve(usuarioStore.list(body));
   });
 };
 
-const UpdateUsuraio = (body) => {
+const UpdateUsuario = (body) => {
   return new Promise(async (resolve, reject) => {
     if (!body._id) {
       reject("Invalid Data");
@@ -41,7 +41,7 @@ const UpdateUsuraio = (body) => {
   });
 };
 
-const DeleteUsuraio = (_id) => {
+const DeleteUsuario = (_id) => {
   return new Promise(async (resolve, reject) => {
     if (!_id) {
       reject("Invalid data");
@@ -56,9 +56,9 @@ const DeleteUsuraio = (_id) => {
 };
 
 module.exports = {
-  AddUsuraio,
-  AddListUsuraio,
-  GetUsuraio,
-  UpdateUsuraio,
-  DeleteUsuraio,
+  AddUsuario,
+  AddListUsuario,
+  GetUsuario,
+  UpdateUsuario,
+  DeleteUsuario,
 };

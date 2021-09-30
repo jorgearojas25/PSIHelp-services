@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const mySchema = new Schema({
   Nombre: { type: String, required: true },
-  Apellido: { type: String, require: true },
-  Identificacion: { type: Number, require: true },
+  Password: { type: String, require: true },
+  Identificacion: { type: Number, require: false },
   Correo: { type: String, require: true },
   Telefono: { type: String, require: true },
   Foto: { type: String, require: false },
