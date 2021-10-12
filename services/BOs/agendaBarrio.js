@@ -4,7 +4,7 @@ class Agenda {
     this.Id_doctor = data.Id_doctor;
     this.Fecha = data.Fecha;
     this.Hora = data.Hora;
-    this.Bloqueada = data.Bloqueada;
+    this.Bloqueado = data.Bloqueado;
     this.Llamada = data.Llamada;
     this.Fecha_creacion = data.Fecha_creacion;
   }
