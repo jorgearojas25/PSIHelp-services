@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 
 router.post("/filter", (req, res) => {
   controller
-    .AddAgenda(req.body)
+    .GetAgenda(req.body)
     .then((data) => {
       response.success(req, res, data, 201);
     })
