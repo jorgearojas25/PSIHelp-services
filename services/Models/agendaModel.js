@@ -5,7 +5,7 @@ const mySchema = new Schema({
   Id_usuario: { type: Schema.ObjectId, ref: "Usuario" },
   Id_doctor: { type: Schema.ObjectId, ref: "Usuario" },
   Fecha: { type: String, required: true },
-  Comentarios: [{ isUser: Boolean, comment: String }],
+  Comentarios: [{ user: String, comment: String }],
   Finalizada: { type: Boolean, required: true, default: false },
   Hora: { type: String, required: true },
   Bloqueado: { type: Boolean, require: true, default: false },
